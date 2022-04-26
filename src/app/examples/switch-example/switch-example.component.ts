@@ -8,6 +8,8 @@ import { IProduct } from 'src/app/catalog/product.model';
 })
 export class SwitchExampleComponent implements OnInit {
   images: any[];
+  currentTab: string = '';
+
   constructor() {
     this.images = [
       {type: 'head', imageUrl: '/assets/images/robot-parts/head-big-eye.png'},

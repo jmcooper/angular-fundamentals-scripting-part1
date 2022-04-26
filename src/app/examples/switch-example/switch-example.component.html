@@ -1,20 +1,25 @@
 <div class="container">
   <div class="tabs">
-    <button>Heads</button>
-    <button>Arms</button>
-    <button>Torsos</button>
-    <button>Bases</button>
+    <button (click)="currentTab='heads'">Heads</button>
+    <button (click)="currentTab='arms'">Arms</button>
+    <button (click)="currentTab='torsos'">Torsos</button>
+    <button (click)="currentTab='bases'">Bases</button>
   </div>
-  <div class="tab-content">
-    <img *ngFor="let image of getHeads()" [src]="image.imageUrl" />
-  </div>
-  <div class="tab-content">
-    <img *ngFor="let image of getArms()" [src]="image.imageUrl" />
-  </div>
-  <div class="tab-content">
-    <img *ngFor="let image of getTorsos()" [src]="image.imageUrl" />
-  </div>
-  <div class="tab-content">
-    <img *ngFor="let image of getBases()" [src]="image.imageUrl" />
+  <div [ngSwitch]="currentTab" class="tab-content-container">
+    <div *ngSwitchCase="'heads'" class="tab-content">
+      <img *ngFor="let head of getHeads()" [src]="head.imageUrl" />
+    </div>
+    <div *ngSwitchCase="'arms'" class="tab-content">
+      <img *ngFor="let arm of getArms()" [src]="arm.imageUrl" />
+    </div>
+    <div *ngSwitchCase="'torsos'" class="tab-content">
+      <img *ngFor="let torso of getTorsos()" [src]="torso.imageUrl" />
+    </div>
+    <div *ngSwitchCase="'bases'" class="tab-content">
+      <img *ngFor="let base of getBases()" [src]="base.imageUrl" />
+    </div>
+    <div *ngSwitchDefault class="tab-content">
+      Please select a part type above.
+    </div>
   </div>
 </div>
