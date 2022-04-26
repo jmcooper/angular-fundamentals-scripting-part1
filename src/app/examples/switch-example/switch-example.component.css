@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  margin-top: 25px;
+  padding: 25px 25px 1px 25px;
+}
+
+.tabs * {
+  display: inline;
+  border-radius: 5px 5px 0 0;
+  background-color: #ccc;
+  padding: 10px;
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.tab-content {
+  margin: 0 25px;
+  background-color: #ccc;
+}
+
+.tab-content img {
+  width: 200px;
+}

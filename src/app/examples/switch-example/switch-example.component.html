@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="tabs">
+    <button>Heads</button>
+    <button>Arms</button>
+    <button>Torsos</button>
+    <button>Bases</button>
+  </div>
+  <div class="tab-content">
+    <img *ngFor="let image of getHeads()" [src]="image.imageUrl" />
+  </div>
+  <div class="tab-content">
+    <img *ngFor="let image of getArms()" [src]="image.imageUrl" />
+  </div>
+  <div class="tab-content">
+    <img *ngFor="let image of getTorsos()" [src]="image.imageUrl" />
+  </div>
+  <div class="tab-content">
+    <img *ngFor="let image of getBases()" [src]="image.imageUrl" />
+  </div>
+</div>

@@ -5,11 +5,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
+import { SwitchExampleComponent } from './examples/switch-example/switch-example.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
-    HomeComponent, CatalogComponent, SiteHeaderComponent
+    HomeComponent, CatalogComponent, SiteHeaderComponent, SwitchExampleComponent
   ],
   imports: [
     BrowserModule
