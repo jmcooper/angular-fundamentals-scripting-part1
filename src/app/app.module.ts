@@ -7,18 +7,21 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { SwitchExampleComponent } from './examples/switch-example/switch-example.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartComponent } from './cart/cart.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    HomeComponent, CatalogComponent, SiteHeaderComponent, SwitchExampleComponent, ProductDetailsComponent
+    AppComponent,
+    HomeComponent,
+    CatalogComponent,
+    SiteHeaderComponent,
+    SwitchExampleComponent,
+    ProductDetailsComponent,
+    CartComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [
-    AppComponent
-  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
