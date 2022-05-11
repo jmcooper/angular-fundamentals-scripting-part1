@@ -1,0 +1,18 @@
+<div class="product">
+  <div class="product-details">
+    <img [src]="getImageUrl(product)" [alt]="product.name" />
+    <div class="product-info">
+      <div class="name">{{ product.name }}</div>
+      <div class="description">
+        {{ product.description }} <a href="#">details</a>
+      </div>
+      <div class="category">Part Type: {{ product.category }}</div>
+    </div>
+  </div>
+  <div class="price">
+    <div [ngClass]="{ discount: product.discount > 0 }">
+      {{ product.price * (1 - product.discount) | currency }}
+    </div>
+    <button class="cta" (click)="onBuyClick()">Buy</button>
+  </div>
+</div>
