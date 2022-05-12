@@ -14,10 +14,6 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // onBuyClick() {
-  //   this.buyClicked.emit(this.product);
-  // }
-
   getImageUrl(product: IProduct) {
     return '/assets/images/robot-parts/' + product.imageName;
   }

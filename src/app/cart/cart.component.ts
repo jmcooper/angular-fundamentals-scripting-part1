@@ -12,7 +12,9 @@ export class CartComponent {
   constructor(public cartService: CartService) {}
 
   ngOnInit() {
-    this.cart = this.cartService.getCart();
+    this.cartService.getCart().subscribe((c) => {
+      this.cart = c;
+    });
   }
 
   get cartItems() {
@@ -21,7 +23,6 @@ export class CartComponent {
 
   onRemoveClick(product: IProduct) {
     this.cartService.removeItem(product);
-    this.cart = this.cartService.getCart();
   }
 
   get cartTotal() {

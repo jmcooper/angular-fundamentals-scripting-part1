@@ -14,7 +14,9 @@ export class SiteHeaderComponent {
   constructor(private cartService: CartService) {}
 
   ngOnInit() {
-    this.cart = this.cartService.getCart();
+    this.cartService.getCart().subscribe((c) => {
+      this.cart = c;
+    });
   }
 
   toggleSignOutMenu() {
