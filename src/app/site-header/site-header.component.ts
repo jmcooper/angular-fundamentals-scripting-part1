@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart/cart.service';
 import { IProduct } from '../catalog/product.model';
 
 @Component({
@@ -10,12 +11,10 @@ export class SiteHeaderComponent {
   cart: IProduct[] = [];
   showSignOutMenu: boolean = false;
 
-  constructor() {}
+  constructor(private cartService: CartService) {}
 
   ngOnInit() {
-    // this.cartService.getCart().subscribe({
-    //   next: (newCart) => (this.cart = newCart),
-    // });
+    this.cart = this.cartService.getCart();
   }
 
   toggleSignOutMenu() {

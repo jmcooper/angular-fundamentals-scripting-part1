@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../catalog/product.model';
+import { CartService } from './cart.service';
 
 @Component({
   selector: 'bot-cart',
@@ -8,9 +9,11 @@ import { IProduct } from '../catalog/product.model';
 })
 export class CartComponent {
   private cart: IProduct[] = [];
-  constructor() {}
+  constructor(public cartService: CartService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.cart = this.cartService.getCart();
+  }
 
   get cartItems() {
     return this.cart;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart/cart.service';
 import { IProduct } from './product.model';
 
 @Component({
@@ -11,7 +12,7 @@ export class CatalogComponent implements OnInit {
   cart: IProduct[] = [];
   filter: string = '';
 
-  constructor() {
+  constructor(private cartService: CartService) {
     this.products = [
       {
         id: 1,
@@ -189,13 +190,12 @@ export class CatalogComponent implements OnInit {
     ];
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cart = this.cartService.getCart();
+  }
 
   addToCart(product: IProduct) {
-    this.cart = [...this.cart, product];
-    console.log(
-      'added: ' + product.name + '. ' + this.cart.length + ' items in cart'
-    );
+    this.cartService.addItem(product);
   }
 
   getFilteredProducts() {
