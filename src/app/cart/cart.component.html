@@ -6,7 +6,9 @@
   </div>
   <ul class="cart" *ngIf="cartItems.length > 0">
     <li class="cart-item" *ngFor="let product of cartItems">
-      <bot-product-details [product]="product"> </bot-product-details>
+      <bot-product-details [product]="product">
+        <button class="cta" (click)="onRemoveClick(product)">Remove</button>
+      </bot-product-details>
     </li>
   </ul>
   <div class="total">Total: {{ cartTotal | currency }}</div>

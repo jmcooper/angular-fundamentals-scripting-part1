@@ -13,6 +13,6 @@
     <div [ngClass]="{ discount: product.discount > 0 }">
       {{ product.price * (1 - product.discount) | currency }}
     </div>
-    <button class="cta" (click)="onBuyClick()">Buy</button>
+    <ng-content></ng-content>
   </div>
 </div>

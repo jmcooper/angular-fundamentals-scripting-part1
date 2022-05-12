@@ -19,6 +19,11 @@ export class CartComponent {
     return this.cart;
   }
 
+  onRemoveClick(product: IProduct) {
+    this.cartService.removeItem(product);
+    this.cart = this.cartService.getCart();
+  }
+
   get cartTotal() {
     return this.cart.reduce((prev, next) => {
       let discount = next.discount && next.discount > 0 ? 1 - next.discount : 1;

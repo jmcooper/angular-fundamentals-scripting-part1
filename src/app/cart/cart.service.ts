@@ -16,4 +16,8 @@ export class CartService {
   addItem(product: IProduct) {
     this.cart.push(product);
   }
+
+  removeItem(product: IProduct) {
+    this.cart = this.cart.filter((i) => i.id !== product.id);
+  }
 }
