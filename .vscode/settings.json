@@ -17,5 +17,6 @@
   "workbench.statusBar.visible": false,
   "workbench.activityBar.visible": false,
   "window.menuBarVisibility": "toggle",
-  "files.autoSave": "onFocusChange"
+  "files.autoSave": "onFocusChange",
+  "editor.quickSuggestions": { "other": false, "comments": false, "strings": false },
 }
